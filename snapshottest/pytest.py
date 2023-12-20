@@ -45,7 +45,7 @@ class PyTestSnapshotTest(SnapshotTest):
         return "{}{} {}".format(
             "{}.".format(cls_name) if cls_name else "",
             flattened_node_name,
-            self.curr_snapshot,
+            (self.curr_snapshot or self.snapshot_counter),  # Default to counter number if no specific was given
         )
 
 
